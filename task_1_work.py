@@ -14,7 +14,7 @@ def load_rules(path: str): # function that will open file read it and remove whi
     spaces_removed = text.strip()
     file.close()
 
-    return split_by_letters # return a keyword
+    return spaces_removed # return a keyword
 
 
 if __name__ == '__main__':
