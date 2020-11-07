@@ -12,7 +12,7 @@ def load_rules(path: str): # function that will open file read it and remove whi
     file = open(path, 'r')
     text = file.read()
     spaces_removed = text.strip()
-    split_by_lines = spaces_removed.splitlines()
+    split_by_lines = spaces_removed.split()
     file.close()
 
     return split_by_lines # return a keyword
