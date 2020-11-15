@@ -12,15 +12,20 @@ def load_rules(path: str): # function that will open file read it and remove whi
     file = open(path, 'r')
     text = file.read()
     spaces_removed = text.strip()
-    split_by_lines = spaces_removed.split()
+    split_by_lines = spaces_removed.splitlines()
+
+    split_by_lines = [i.strip(' ') for i in split_by_lines ]
+
+    filtered_list = list(filter(None, split_by_lines))
+   
     file.close()
 
-    return split_by_lines # return a keyword
+    return filtered_list # return a keyword
 
 
 if __name__ == '__main__':
     # Your testing here.
     # Ensure any test code you add is tabbed in as part of this if statement.
     print(get_hits("C:\\Users\\Victoria_Rouch\\OneDrive - Milton Keynes College O365\\course\\programming\\Task 1\\my_file.txt", "private"))
-    print(load_rules("C:\\Users\\Victoria_Rouch\\OneDrive - Milton Keynes College O365\\course\\programming\\Task 2\\example_2.txt"))
+    print(load_rules("C:\\Users\\Victoria_Rouch\\OneDrive - Milton Keynes College O365\\course\\programming\\Task 2.1\\example_2.txt"))
     
